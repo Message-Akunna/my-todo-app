@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A todo app with javascript:Jquery">
+        <meta name="author" content="Message Akunna O.">
+        
+        <title>Welcome : Todo App</title>
+        <link rel="icon" href="assets/images/">
+        <!--
+            *
+            * stylesheets
+            *
+        -->
+        <!-- Bootstrap -->
+        <link href="assets/plugins/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/plugins/fontawesome-5.13.1/css/all.min.css" rel="stylesheet">
+        <!-- Main -->
+        <link href="assets/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark app-bg-accent-darker">
+                <div class="container-fluid border-bottom app-border-white-25 px-0">
+                    <a class="navbar-brand" href="#">Expand at lg</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarsExample05">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active mr-2 py-1">
+                                <a class="nav-link rounded-lg py-1" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item mr-2 py-1">
+                                <a class="nav-link rounded-lg py-1" href="#">Reminders</a>
+                            </li>
+                            <li class="nav-item mr-2 py-1">
+                                <a class="nav-link rounded-lg py-1" href="#">Analytics</a>
+                            </li>
+                            <li class="nav-item mr-2 py-1 dropdown">
+                                <a class="nav-link rounded-lg py-1 dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown05">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item ml-2 py-1">
+                                <a class="nav-link rounded-lg py-1" href="#"> <i class="fas fa-bell"></i> </a>
+                            </li>
+                            <li class="nav-item ml-2 py-1 active">
+                                <a class="nav-link rounded-circle p-1" href="#">
+                                    <img src="assets/images/user-smiling-square.jpg" class="rounded-circle img" alt="" width="30" height="30" title="Message Akunna">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <main class="app-bg-accent-very-light">
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <section class="app-bg-accent-darker mb-0">
+                <div class="container">
+                    <div class="pt-4 pb-5 mb-2">
+                        <h1 class="app-text-gradient-light animated-text-color d-inline">To-Do</h1>
+                        <div class="row pb-5  mt-2">
+                            <div class="col-md-8">
+                                <div class="d-md-flex justify-content-start align-items-end">
+                                    <div class="pr-2 mb-2">
+                                        <a class="app-text-accent-lightest pr-2" href=""><span class="text-white-50"><i class="fas fa-clock"></i></span> Task List</a>
+                                    </div>
+                                    <div class="pr-2 mb-2">
+                                        <a class="app-text-accent-lightest pr-2" href=""><span class="text-white-50"><i class="fas fa-list-alt"></i></span> Timeline</a>
+                                    </div>
+                                    <div class="pr-2 mb-2">
+                                        <a class="app-text-accent-lightest pr-2" href=""><span class="text-white-50"><i class="fas fa-user-edit"></i></span> Task Manager</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-left text-md-right">
+                                    <button class="btn app-btn-primary btn-sm" type="button" data-toggle="modal" data-target="#newTaskModal">New Task 
+                                        <span class="app-text-primary-lighter">
+                                            <i class="fas fa-plus" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class=" mt-0">
+                <div class="container-fluid">
+                    <div class="card border-0 default-shadow-md" style="top: -80px;">
+                        <div class="card-header app-bg-accent-lightest">
+                            <h5 class="card-title mb-0">Building A Todo App <span class="text--xs text-muted"> Started : 02 : 55 <span class="font-italic">PM</span> Thursday, 25<sup>th</sup>April 2020.</span></h5>
+                        </div>
+                        <div class="card-body py-2 border-bottom bg-light">
+                            <div class="d-md-flex justify-content-between">
+                                <span class="mb-0">
+                                    <!-- Default -->
+                                    <form class="lookup form-inline mt-1">
+                                        <div class="input-group input-group-sm mr-2">
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text bg-white border-right-0 app-text-gray-4" id="basic-addon1"> <i class="fas fa-search"></i> </span>
+                                            </div>
+                                            <input type="text" class="form-control app-form-control-primary border-left-0" placeholder="Search List..." aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="btn-group btn-group-sm ml-md-2 mt-2 mt-md-0 default-shadow-sm p-0">
+                                            <button class="btn app-btn-outline-primary">New Member <span class="app-text-primary-lighter"><i class="fas fa-user-plus"></i></span></button>
+                                            <button class="btn app-btn-outline-primary"><span class="app-text-primary-lighter"><i class="fas fa-list-alt"></i></span> Members List </button>
+                                        </div>
+                                    </form>
+                                </span> 
+                                <span class="float-md-right">
+                                    <span class="avatar-list avatar-list-overlap mt-2 mt-md-0">
+                                        <a class="avatar" href="#"><img src="assets/images/user-smiling-square.jpg"></a>
+                                        <a class="avatar" href="#"><img src="assets/images/user-smiling-square.jpg"></a>
+                                        <a class="avatar" href="#"><img src="assets/images/user-smiling-square.jpg"></a>
+                                        <a class="avatar" href="#"><img src="assets/images/user-smiling-square.jpg"></a>
+                                        <a class="avatar" href="#"><img src="assets/images/user-smiling-square.jpg"></a>
+                                        <a class="avatar" href="#"><img src="assets/images/user-smiling-square.jpg"></a>
+                                    </span>
+                                </span> 
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div class="task-title pl-2">
+                                        <p class="app-text-accent-darkest ml-2 font-weight-bold">
+                                            <span class="app-text-gray-2"><i class="fas fa-pen-square"></i></span> 
+                                            Task List
+                                        </p>
+                                    </div>
+                                    <div class="task-list w-100 mb-4" id="taskList">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem1">
+                                            <div class="task-timeline-checkbox pt-0 mt-0"> 
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-1">
+                                                    <label class="custom-control-label" for="check-1"></label>
+                                                </div>
+                                            </div>
+                                            <div class="media-body task-timeline-content pt-2">
+                                                <p class="app-text-gray-10 mb-1"><span class="">Maryam Amiri</span> <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">24 min ago</time></p>
+                                                <p class="font-weight-lighter app-text-gray-6 text--sm mb-1">You need to update the changelog in documentation before we release the content.</p>
+                                                <div class="media-block-actions mt-1">
+                                                    <nav class="nav nav-dot-separated">
+                                                        <a class="nav-link app-text-gray-4" href="#">Comments (2)</a>
+                                                        <a class="nav-link app-text-gray-4" href="#">likes (7)</a>
+                                                    </nav>
+                                                    <nav class="nav fs-16 media-hover-show">
+                                                        <a class="nav-link app-text-gray-4" href="#" data-provide="tooltip" title="Edit"><i class="fas fa-pen-alt"></i></a>
+                                                        <a class="nav-link text-danger" href="#" data-provide="tooltip" title="Delete"><i class="fas fa-trash-alt"></i></a>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem2">
+                                            <div class="task-timeline-checkbox pt-0 mt-0"> 
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-2">
+                                                    <label class="custom-control-label" for="check-2"></label>
+                                                </div>
+                                            </div>
+                                            <div class="media-body task-timeline-content pt-2">
+                                                <p class="app-text-gray-10 mb-1"><span class="">Maryam Amiri</span> 
+                                                    <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">30 min ago</time>
+                                                </p>
+                                                <p class="font-weight-lighter app-text-gray-6 text--sm mb-1">You need to update the changelog in documentation before we release the content.</p>
+                                                <div class="media-block-actions mt-1">
+                                                    <nav class="nav nav-dot-separated">
+                                                        <a class="nav-link app-text-gray-4" href="#">Comments (2)</a>
+                                                        <a class="nav-link app-text-gray-4" href="#">likes (7)</a>
+                                                    </nav>
+                                                    <nav class="nav fs-16 media-hover-show">
+                                                        <a class="nav-link app-text-gray-4" href="#" data-provide="tooltip" title="Edit"><i class="fas fa-pen-alt"></i></a>
+                                                        <a class="nav-link text-danger" href="#" data-provide="tooltip" title="Delete"><i class="fas fa-trash-alt"></i></a>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem3">
+                                            <div class="task-timeline-checkbox pt-0 mt-0"> 
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-3">
+                                                    <label class="custom-control-label" for="check-3"></label>
+                                                </div>
+                                            </div>
+                                            <div class="media-body task-timeline-content pt-2">
+                                                <p class="app-text-gray-10 mb-1">
+                                                    <span class="">Maryam Amiri</span> 
+                                                    <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">40 min ago</time>
+                                                </p>
+                                                <p class="font-weight-lighter app-text-gray-6 text--sm mb-1">You need to update the changelog in documentation before we release the content.</p>
+                                                <div class="media-block-actions mt-1">
+                                                    <nav class="nav nav-dot-separated">
+                                                        <a class="nav-link app-text-gray-4" href="#">Comments (2)</a>
+                                                        <a class="nav-link app-text-gray-4" href="#">likes (7)</a>
+                                                    </nav>
+                                                    <nav class="nav fs-16 media-hover-show">
+                                                        <a class="nav-link app-text-gray-4" href="#" data-provide="tooltip" title="Edit"><i class="fas fa-pen-alt"></i></a>
+                                                        <a class="nav-link text-danger" href="#" data-provide="tooltip" title="Delete"><i class="fas fa-trash-alt"></i></a>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="task-title pl-2">
+                                        <p class="text-warning ml-2">
+                                            <span class="app-text-gray-2">
+                                                <i class="fas fa-circle-notch fa-pulse"></i> 
+                                            </span> 
+                                            Tasks in Progress
+                                        </p>
+                                    </div>
+                                    <div class="progress-task-list w-100 mb-4" id="progressTaskList">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem4">
+                                            <div class="task-timeline-checkbox pt-0 mt-0"> 
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-4">
+                                                    <label class="custom-control-label" for="check-4"></label>
+                                                </div>
+                                            </div>
+                                            <div class="media-body task-timeline-content pt-2">
+                                                <p class="app-text-gray-10 mb-1"><span class="">Maryam Amiri</span> <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">50 min ago</time></p>
+                                                <p class="font-weight-lighter app-text-gray-6 text--sm mb-1">You need to update the changelog in documentation before we release the content.</p>
+                                                <div class="media-block-actions mt-1">
+                                                    <nav class="nav nav-dot-separated">
+                                                        <a class="nav-link app-text-gray-4" href="#">Comments (2)</a>
+                                                        <a class="nav-link app-text-gray-4" href="#">likes (7)</a>
+                                                    </nav>
+                                                    <nav class="nav fs-16 media-hover-show">
+                                                        <a class="nav-link app-text-gray-4" href="#" data-provide="tooltip" title="Edit"><i class="fas fa-pen-alt"></i></a>
+                                                        <a class="nav-link text-danger" href="#" data-provide="tooltip" title="Delete"><i class="fas fa-trash-alt"></i></a>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="task-title pl-2">
+                                        <p class="text-success ml-2">
+                                            <span class="app-text-gray-2">
+                                                <i class="fas fa-check-square"></i>
+                                            </span> 
+                                            Completed Task
+                                        </p>
+                                    </div>
+                                    <!-- completed task list container starts here -->
+                                    <div class="completed-task-list w-100 mb-4" id="completedTaskList">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem5">
+                                            <div class="task-timeline-checkbox pt-0 mt-0"> 
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-5">
+                                                    <label class="custom-control-label" for="check-5"></label>
+                                                </div>
+                                            </div>
+                                            <div class="media-body task-timeline-content pt-2">
+                                                <p class="app-text-gray-10 mb-1">
+                                                    <span class="">Maryam Amiri</span> 
+                                                    <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">1 Hour ago</time>
+                                                </p>
+                                                <p class="font-weight-lighter app-text-gray-6 text--sm mb-1">You need to update the changelog in documentation before we release the content.</p>
+                                                <div class="media-block-actions mt-1">
+                                                    <nav class="nav nav-dot-separated">
+                                                        <a class="nav-link app-text-gray-4" href="#">Comments (2)</a>
+                                                        <a class="nav-link app-text-gray-4" href="#">likes (7)</a>
+                                                    </nav>
+                                                    <nav class="nav fs-16 media-hover-show">
+                                                        <a class="nav-link app-text-gray-4" href="#" data-provide="tooltip" title="Edit"><i class="fas fa-pen-alt"></i></a>
+                                                        <a class="nav-link text-danger" href="#" data-provide="tooltip" title="Delete"><i class="fas fa-trash-alt"></i></a>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- completed task list container ends here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- 
+            *
+            * Modal
+            *
+         -->
+        <div class="modal fade" id="newTaskModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog app-modal-size modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header py-2">
+                        <div class="text-center">
+                            <h6 class="modal-title" id="">Task Manager</h6>
+                        </div>
+                        <button type="button" class="close pt-3 pb-2" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <form class="lookup">
+                            <!-- <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white border-right-0 app-text-gray-4" id="basic-addon1"> <i class="fas fa-search"></i> </span>
+                                </div>
+                                <input type="text" class="form-control app-form-control-primary border-left-0" placeholder="Search List..." aria-describedby="basic-addon1">
+                            </div> -->
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group mb-0">
+                                        <label for="date" class="mb-0">Date</label>
+                                        <input type="date" name="date" id="date" class="form-control app-form-control-primary" placeholder="" aria-describedby="helpId">
+                                        <small id="helpDate" class="text-muted">Task Date</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group mb-0">
+                                        <label for="time" class="mb-0">Starting Time</label>
+                                        <input type="time" name="time" id="time" class="form-control app-form-control-primary" placeholder="" aria-describedby="helpId">
+                                        <small id="helpTime" class="text-muted">Task start time</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-0">
+                                <label for="teamMember" class="mb-0 mt-1">Collaborator(s)</label>
+                                <select id="teamMember" class="custom-select app-form-control-primary" name="">
+                                    <option>Emmanuel Akunna</option>
+                                    <option>Emmanuel Abeng</option>
+                                    <option>Elochukwu Azubuike</option>
+                                </select>
+                                <small id="helpCollaborator" class="text-muted">Select team members</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="taskDescription" class="mb-0 mt-1">Task Description</label>
+                              <textarea class="form-control app-form-control-primary" name="task-description" id="taskDescription" placeholder="Describe task with a note..." rows="3"></textarea>
+                            </div>
+                            <div class="custom-control custom-switch">
+                                <input id="notification" class="custom-control-input app-custom-control-input-primary" type="checkbox" name="notification" value="true">
+                                <label for="notification" class="custom-control-label">Send Notification</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer py-2">
+                        <button type="button" class="btn app-btn-primary btn-block btn-sm">Add Task 
+                            <span class="app-text-primary-lighter">
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 
+            *
+            * Scripts
+            *
+         -->
+        <!-- Jquery-->
+        <script src="assets/plugins/jquery/jquery-3.5.1.slim.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="assets/plugins/bootstrap-4.5.0-dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Main -->
+        <script src="assets/js/main.js"></script>
+        <script>
+
+        </script>
+    </body>
+</html>
