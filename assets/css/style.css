@@ -987,3 +987,10 @@ img {
         max-width: 400px;
     }
 }
+
+/* dragged item opacity */
+/* .x-panel-ghost {
+    opacity: 1;
+    -moz-opacity: 1.0;
+    filter:alpha(opacity=100);
+} */
