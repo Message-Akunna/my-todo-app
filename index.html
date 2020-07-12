@@ -147,8 +147,8 @@
                                             Task List
                                         </p>
                                     </div>
-                                    <div class="task-list w-100 mb-4" id="taskList">
-                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem1">
+                                    <div class="task-list w-100 mb-4" id="taskList" data-draggable="target">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" data-draggable="item" id="draggableTaskListItem1">
                                             <div class="task-timeline-checkbox pt-0 mt-0"> 
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-1">
@@ -156,7 +156,7 @@
                                                 </div>
                                             </div>
                                             <div class="media-body task-timeline-content pt-2">
-                                                <p class="app-text-gray-10 mb-1"><span class="">Maryam Amiri</span> <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">24 min ago</time></p>
+                                                <p class="app-text-gray-10 mb-1"><span class="font-weight-bold">Maryam Amiri</span> <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">24 min ago</time></p>
                                                 <p class="font-weight-light app-text-gray-10 mb-1">You need to update the changelog in documentation before we release the content.</p>
                                                 <div class="media-block-actions mt-1">
                                                     <nav class="nav nav-dot-separated">
@@ -170,7 +170,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem2">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" data-draggable="item" id="draggableTaskListItem2">
                                             <div class="task-timeline-checkbox pt-0 mt-0"> 
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-2">
@@ -178,7 +178,7 @@
                                                 </div>
                                             </div>
                                             <div class="media-body task-timeline-content pt-2">
-                                                <p class="app-text-gray-10 mb-1"><span class="">Maryam Amiri</span> 
+                                                <p class="app-text-gray-10 mb-1"><span class="font-weight-bold">Maryam Amiri</span> 
                                                     <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">30 min ago</time>
                                                 </p>
                                                 <p class="font-weight-light app-text-gray-10 mb-1">You need to update the changelog in documentation before we release the content.</p>
@@ -194,7 +194,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem3">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" data-draggable="item" id="draggableTaskListItem3">
                                             <div class="task-timeline-checkbox pt-0 mt-0"> 
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-3">
@@ -203,7 +203,7 @@
                                             </div>
                                             <div class="media-body task-timeline-content pt-2">
                                                 <p class="app-text-gray-10 mb-1">
-                                                    <span class="">Maryam Amiri</span> 
+                                                    <span class="font-weight-bold">Maryam Amiri</span> 
                                                     <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">40 min ago</time>
                                                 </p>
                                                 <p class="font-weight-light app-text-gray-10 mb-1">You need to update the changelog in documentation before we release the content.</p>
@@ -230,8 +230,8 @@
                                             Tasks in Progress
                                         </p>
                                     </div>
-                                    <div class="progress-task-list w-100 mb-4" id="progressTaskList">
-                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem4">
+                                    <div class="progress-task-list w-100 mb-4" id="progressTaskList" data-draggable="target">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" data-draggable="item" id="draggableTaskListItem4">
                                             <div class="task-timeline-checkbox pt-0 mt-0"> 
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-4">
@@ -239,7 +239,7 @@
                                                 </div>
                                             </div>
                                             <div class="media-body task-timeline-content pt-2">
-                                                <p class="app-text-gray-10 mb-1"><span class="">Maryam Amiri</span> <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">50 min ago</time></p>
+                                                <p class="app-text-gray-10 mb-1"><span class="font-weight-bold">Maryam Amiri</span> <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">50 min ago</time></p>
                                                 <p class="font-weight-light app-text-gray-10 mb-1">You need to update the changelog in documentation before we release the content.</p>
                                                 <div class="media-block-actions mt-1">
                                                     <nav class="nav nav-dot-separated">
@@ -265,8 +265,8 @@
                                         </p>
                                     </div>
                                     <!-- completed task list container starts here -->
-                                    <div class="completed-task-list w-100 mb-4" id="completedTaskList">
-                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" draggable="true" id="draggableTaskListItem5">
+                                    <div class="completed-task-list w-100 mb-4" id="completedTaskList" data-draggable="target">
+                                        <div class="media bg-white px-2 pt-0 pb-2 task-list-item" data-draggable="item" id="draggableTaskListItem5">
                                             <div class="task-timeline-checkbox pt-0 mt-0"> 
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input app-custom-control-input-primary" id="check-5">
@@ -275,7 +275,7 @@
                                             </div>
                                             <div class="media-body task-timeline-content pt-2">
                                                 <p class="app-text-gray-10 mb-1">
-                                                    <span class="">Maryam Amiri</span> 
+                                                    <span class="font-weight-bold">Maryam Amiri</span> 
                                                     <time class="float-right text--sm app-text-gray-4" datetime="2018-07-14 20:00">1 Hour ago</time>
                                                 </p>
                                                 <p class="font-weight-light app-text-gray-10 mb-1">You need to update the changelog in documentation before we release the content.</p>
